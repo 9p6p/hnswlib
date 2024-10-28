@@ -1305,10 +1305,10 @@ class HierarchicalNSW : public AlgorithmInterface<dist_t> {
         std::priority_queue<std::pair<dist_t, tableint>, std::vector<std::pair<dist_t, tableint>>, CompareByFirst> top_candidates;
         bool bare_bone_search = !num_deleted_ && !isIdAllowed;
         if (bare_bone_search) {
-            top_candidates = searchBaseLayerST<true>(
+            top_candidates = searchBaseLayerST<true, true>(
                     currObj, query_data, std::max(ef_, k), isIdAllowed);
         } else {
-            top_candidates = searchBaseLayerST<false>(
+            top_candidates = searchBaseLayerST<false, true>(
                     currObj, query_data, std::max(ef_, k), isIdAllowed);
         }
 

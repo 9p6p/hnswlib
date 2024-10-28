@@ -102,4 +102,10 @@ if(HNSWLIB_EXAMPLES)
 
     add_executable(main tests/cpp/main.cpp tests/cpp/sift_1b.cpp)
     target_link_libraries(main hnswlib)
+
+    add_executable(build tests/build.cpp tests/build.cpp)
+    target_link_libraries(build hnswlib)
+
+    add_executable(search tests/search.cpp tests/search.cpp)
+    target_link_libraries(search hnswlib)
 endif()
